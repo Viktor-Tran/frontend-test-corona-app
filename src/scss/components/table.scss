@@ -1,0 +1,19 @@
+table, 
+td,
+th {
+    width: calc(100% - 20px);
+    margin: 20px auto;
+    table-layout: auto;
+    border-collapse: collapse;
+    
+    
+    th, td {
+        padding: 10px;
+        border: solid 1px;
+        text-align: center;
+    }
+}
+.fixed {
+    table-layout: fixed;
+    margin: 0 20px;
+}
