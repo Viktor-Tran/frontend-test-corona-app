@@ -1,28 +1,27 @@
 import { useEffect, useState } from "react";
+import { useInterval } from "../../hooks/useInterval";
 import { Error } from "../../type";
 import Loading from "../loading/loading";
+import './_error.scss'
 
 export default function CustomError({ message }: Error) {
-    const [countDown, setCountDown] = useState<number>(5000)
+    const [countDown, setCountDown] = useState<number>(5)
 
-    useEffect(() => {
-        if (message && message.length > 0) {
-            setTimeout(() => {
-                setCountDown(prev => prev - 1000)
-            }, countDown);
-        }
-    }, [])
+    useInterval(() => {
+        setCountDown(countDown - 1)
+    }, 1000)
 
     useEffect(() => {
         if (countDown === 0) {
             window.location.reload()
         }
     }, [countDown])
+
     return (
         <>
             <Loading />
-            <h2 className='error'>{message}</h2>
-            <h3 className='error'>The application going to reload automatically after {countDown}ms</h3>
+            <h2 className='error'>Something went wrong: {message}</h2>
+            <h4 className='error'>The application going to reload automatically after {countDown}s</h4>
         </>
     )
 };

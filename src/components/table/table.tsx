@@ -1,9 +1,11 @@
 import { useEffect, useState } from 'react'
-import './_table.scss'
-import Summary from '../../services/summary'
 import { Country } from '../../type'
+
+import Summary from '../../services/summary'
 import Loading from '../loading/loading'
 import CustomError from '../CustomError/error'
+
+import './_table.scss'
 export default function Table() {
 
     const [countries, setCountries] = useState<Array<Country>>([])
@@ -15,30 +17,24 @@ export default function Table() {
         Summary.getDailyCase()
             .then((res) => {
                 const { Countries, Message } = res.data
+                if (Message.includes('Caching in progress')) {
+                    setCaching(Message)
+                }
                 if (Countries && Countries.length > 0) {
                     setCountries(Countries)
                     setLoading(false)
                 }
-                if (Message.includes('Caching in progress')) {
-                    setCaching(Message)
-                }
             }).catch(e => {
                 setLoading(true)
             })
-        return () => {
-            setCaching('')
-            // setLoading(false)
-            setCountries([])
-        }
     }, [])
 
 
-
-    if (loading) return <Loading />
+    if (loading && caching.length === 0) return <Loading />
 
     return (
         <>
-            {caching && caching.length > 0 ? <CustomError message={caching} /> : <table className='fixed'>
+            {caching.length > 0 ? <CustomError message={caching} /> : <table className='fixed'>
                 <thead>
                     <tr>
                         <th>Country Name</th>
