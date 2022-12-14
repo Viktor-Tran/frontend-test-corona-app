@@ -12,3 +12,7 @@ export interface Country {
     TotalDeaths: number,
     TotalRecovered: number
 }
+
+export interface Error {
+    message: string
+}

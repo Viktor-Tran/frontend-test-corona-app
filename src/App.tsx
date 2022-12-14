@@ -1,5 +1,6 @@
-import Table from "./components/table";
-import './scss/components/app.scss'
+import Loading from "./components/loading/loading";
+import Table from "./components/table/table";
+import './scss/components/_app.scss'
 
 
 function App() {
