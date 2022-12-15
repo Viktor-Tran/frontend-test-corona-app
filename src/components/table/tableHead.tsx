@@ -11,7 +11,6 @@ export default function TableHead({ handleSort }: TableHeadProps) {
 
     const handleSortTable = (name: string, index: number) => {
         handleSort(name)
-        console.log('###name', index, name.includes('recovered'));
         setShowIcon(index)
         setShowName(name)
     }
@@ -20,8 +19,8 @@ export default function TableHead({ handleSort }: TableHeadProps) {
         <>
             {TABLE_HEAD.map(({ name, label }, index) => {
                 return (
-                    <th key={name} className='bx-fw' onClick={() => handleSortTable(name, index)}>
-                        <div className="link">
+                    <th key={name} className='tableHead' onClick={() => handleSortTable(name, index)}>
+                        <div className="tableHead__link">
                             {label}
                             {
                                 index === showIcon && showName === name && index !== 0

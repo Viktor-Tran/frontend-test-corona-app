@@ -1,3 +1,4 @@
+@import '../../scss/variable.scss';
 table, 
 td,
 th {
@@ -10,6 +11,10 @@ th {
         padding: 10px;
         border: solid 1px;
         text-align: center;
+        @media (max-width: $break-point-mobile),(min-width: $break-point-mobile) and (max-width: $break-point-mobile-md)  {
+            font-size: 0.8rem;
+            padding: 2px;
+        }
     }
 }
 .fixed {
@@ -17,10 +22,24 @@ th {
     margin: 0 auto;
     width: 95vw;
 }
-.link {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
+
+.tableHead{
+    cursor: pointer;
+    background: $color;
+    color: #fff;
+    &__link{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+    };
+    @media (max-width: $break-point-mobile),(min-width: $break-point-mobile) and (max-width: $break-point-mobile-md)  {
+        font-size: 0.9rem;
+        font-weight: 400;
+        padding: 2px;
+    }
+}
+.tableBody{
+    cursor: pointer;
 }

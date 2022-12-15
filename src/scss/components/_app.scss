@@ -1,5 +1,10 @@
+@import '../variable.scss';
+
 .header-title{
     font-size: 3rem;
     font-weight: 700;
     text-align: center;
+    @media (max-width: $break-point-mobile),(min-width: $break-point-mobile) and (max-width: $break-point-mobile-md)  {
+        font-size: 2.5rem;
+    }
 }

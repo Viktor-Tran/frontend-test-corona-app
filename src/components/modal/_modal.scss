@@ -1,0 +1,103 @@
+@import '../../scss/variable.scss';
+
+.modal {
+    width: 40vw;
+    height: 90vh;
+    background: rgb(212, 213, 217);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: 1.5rem;
+    border-radius: $padding;
+    user-select: none;
+    @media (max-width: $break-point-mobile),(min-width: $break-point-mobile) and (max-width: $break-point-tablet) {
+        width: 80vw;
+        font-size: 0.8rem;
+    }
+    
+    &-content {
+        &__btnClose {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            outline: 0;
+            border: 0;
+            background: $color;
+            color: #fff;
+            align-self: flex-end;
+            cursor: pointer;
+            @media (max-width: $break-point-mobile),(min-width: $break-point-mobile) and (max-width: $break-point-mobile-md)  {
+                width: 30px;
+                height: 30px;
+            }
+        };
+        width: 100%;
+        height: 100%;
+        padding: $padding;
+        display: flex;
+        flex-direction: column;
+        &__name {
+            font-size: 3rem;
+            flex: 1;
+            @media (max-width: $break-point-mobile),(min-width: $break-point-mobile) and (max-width: $break-point-mobile-md)  {
+                font-size: 1rem;
+            }
+        };
+        &__flag {
+            display: flex;
+            justify-content: center;
+            flex: 2
+        };
+        &__info{
+            flex: 2;
+            justify-content: center;
+            display: flex;
+            flex-direction: column
+        };
+        &__btn{
+            flex: 1
+        };
+        &__btnCancel{
+            padding: 15px 30px;
+            outline: 0;
+	        border: 0;
+            color: #fff;
+            background-color: $color;
+            border-radius: 15px;
+            box-shadow: 0 10px #fff;
+            cursor: pointer;
+            transition: background-color 400ms ease-in-out;
+            &:active {
+                background-color: $color;
+                box-shadow: 0 5px #cbcbcc;
+                transform: translateY(5px);
+            };
+            &:hover {
+                letter-spacing: 0.25rem;
+                background: var($color);
+                color: var($color);
+                box-shadow: 0 0 50px 10px var($color);
+            }
+            @media (max-width: $break-point-mobile),(min-width: $break-point-mobile) and (max-width: $break-point-mobile-md)  {
+                padding: 10px 20px;
+            }
+        }
+    }; 
+}
+
+.general {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    @media (min-width: $break-point-mobile) and (max-width: $break-point-mobile-md){
+        h3, span {
+            font-size: 0.8rem;
+        }
+    }
+    @media (min-width: $break-point-tablet){
+        font-size: 1.2rem;
+    }
+}

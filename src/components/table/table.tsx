@@ -10,14 +10,17 @@ import './_table.scss'
 import TableBody from './tableBody'
 import TableHead from './tableHead'
 import { COUNTRY_PER_PAGE } from '../../constant'
+import Modal from '../modal'
 export default function Table() {
-
     const [countries, setCountries] = useState<Array<Country>>([])
     const [loading, setLoading] = useState<boolean>(false)
     const [caching, setCaching] = useState<string>('')
     const [currentList, setCurrentList] = useState<Array<Country>>([])
 
     const [currentPage, setCurrentPage] = useState<number>(1)
+
+    const [isShowModal, setIsShowModal] = useState<boolean>(false)
+    const [countryCode, setCountryCode] = useState<string>('')
 
     useEffect(() => {
         setLoading(true)
@@ -62,10 +65,16 @@ export default function Table() {
         }
     }
 
+    const handleShowDetails = (item: Country) => {
+        setIsShowModal(true)
+        setCountryCode(item.CountryCode)
+    }
+
     if (loading && caching.length === 0) return <Loading />
 
     return (
         <>
+            {isShowModal && <Modal countryCode={countryCode} setIsShowModal={setIsShowModal} />}
             {
                 caching.length > 0 ? <CustomError message={caching} /> : <>
                     <table className='fixed'>
@@ -77,7 +86,7 @@ export default function Table() {
                             </tr>
                         </thead>
                         {
-                            countries && countries.length > 0 && <TableBody listItem={currentList} />
+                            countries && countries.length > 0 && <TableBody listItem={currentList} handleShowDetail={handleShowDetails} />
                         }
                     </table>
                     <CustomPagination listPerPage={COUNTRY_PER_PAGE} totalList={countries.length} handleChangePage={handleChangePage} activePage={currentPage} />

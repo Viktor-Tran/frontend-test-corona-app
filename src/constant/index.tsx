@@ -1,5 +1,5 @@
 
-export const COUNTRY_PER_PAGE = 10
+export const COUNTRY_PER_PAGE = 15
 
 export const TABLE_HEAD = [
     { name: '', label: 'Country Name' },

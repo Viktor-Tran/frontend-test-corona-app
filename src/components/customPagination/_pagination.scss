@@ -1,5 +1,7 @@
+@import '../../scss/variable.scss';
+
 .pagination {
-    margin: 0;
+    margin: 50px 0;
     padding: 0;
     text-align: center;
     li {
@@ -13,12 +15,20 @@
             -webkit-transition: background-color 0.3s;
             transition: background-color 0.3s;
             &.active{
-                background-color: #4caf50;
+                background-color: $color;
                 color: #fff
             }
             &:hover:not(.active) {
-                background-color: #ddd;
+                background-color: $subColor;
+                color: #fff
             }
-          }
-      }
+            @media (max-width: $break-point-mobile),(min-width: $break-point-mobile) and (max-width: $break-point-mobile-md) {
+                padding: 4px 8px;
+                font-size: 0.8rem;
+            }
+        }
+    }
+    @media (max-width: $break-point-mobile) {
+        margin: $padding;
+    }
   }

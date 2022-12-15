@@ -1,7 +1,4 @@
-$base: #263238;
-$lite:  rgb(8, 62, 224);
-$brand: #FF3D00;
-$size: 48px;
+@import '../../scss/variable.scss';
 
 .spinner-loading {
     min-width: 200px;
@@ -15,18 +12,12 @@ $size: 48px;
     color: #ccc;
     transition: 0.3s linear;
 
-    @media (max-width: 768px ) {
-       width: 50%;
-    }
-    @media (max-width: 480px) {
-      width: 100%;
-    }
     .spinner-loading__loader {
         width : $size;
         height: $size;
         border-radius: 50%;
         display: inline-block;
-        border-top:4px solid $lite;
+        border-top:4px solid $color;
         border-right:4px solid transparent;
         animation: rotation 1s linear infinite;
         &:after {
@@ -39,7 +30,7 @@ $size: 48px;
             width : $size;
             height: $size;
             border-radius: 50%;
-            border-bottom:4px solid $brand;
+            border-bottom:4px solid $subColor;
             border-left:4px solid transparent;
         }
     }

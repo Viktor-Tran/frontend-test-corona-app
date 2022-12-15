@@ -1,11 +1,11 @@
 import { TableBodyProps } from "../../type";
 
-export default function TableBody({ listItem }: TableBodyProps) {
+export default function TableBody({ listItem, handleShowDetail }: TableBodyProps) {
     return (
         <>
             {
-                listItem.map(item => (
-                    <tbody key={item.ID}>
+                listItem.map((item: any) => (
+                    <tbody className="tableBody" key={item.ID} onClick={() => handleShowDetail(item)}>
                         <tr>
                             <td>{item.Country}</td>
                             <td>{item.NewRecovered}</td>
