@@ -1,0 +1,24 @@
+.pagination {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    li {
+        display: inline;
+        a {
+            display: inline-block;
+            text-decoration: none;
+            padding: 5px 10px;
+            color: #000;
+            border-radius: 5px;
+            -webkit-transition: background-color 0.3s;
+            transition: background-color 0.3s;
+            &.active{
+                background-color: #4caf50;
+                color: #fff
+            }
+            &:hover:not(.active) {
+                background-color: #ddd;
+            }
+          }
+      }
+  }

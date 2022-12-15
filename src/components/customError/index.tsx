@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useInterval } from "../../hooks/useInterval";
 import { Error } from "../../type";
-import Loading from "../loading/loading";
+import Loading from "../loading";
 import './_error.scss'
 
 export default function CustomError({ message }: Error) {

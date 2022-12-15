@@ -1,9 +1,8 @@
 table, 
 td,
 th {
-    width: calc(100% - 20px);
-    margin: 20px auto;
-    table-layout: auto;
+    width: 100%;
+    table-layout: fixed;
     border-collapse: collapse;
     
     
@@ -15,5 +14,13 @@ th {
 }
 .fixed {
     table-layout: fixed;
-    margin: 0 20px;
+    margin: 0 auto;
+    width: 95vw;
+}
+.link {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
 }

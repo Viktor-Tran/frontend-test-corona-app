@@ -16,3 +16,18 @@ export interface Country {
 export interface Error {
     message: string
 }
+
+export interface Pagination {
+    listPerPage: number,
+    totalList: number,
+    activePage: number,
+    handleChangePage: (number: number) => void
+}
+
+export interface TableBodyProps {
+    listItem: Array<Country>,
+}
+
+export interface TableHeadProps {
+    handleSort: (name: string) => void
+}
