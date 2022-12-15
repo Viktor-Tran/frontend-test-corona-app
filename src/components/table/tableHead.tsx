@@ -2,7 +2,7 @@ import { useState } from "react";
 import { TABLE_HEAD } from "../../constant";
 import { TableHeadProps } from "../../type";
 
-import { BiUpArrow, BiDownArrow } from 'react-icons/bi'
+import { BsFillCaretDownFill, BsFillCaretUpFill } from 'react-icons/bs'
 
 
 export default function TableHead({ handleSort }: TableHeadProps) {
@@ -25,8 +25,8 @@ export default function TableHead({ handleSort }: TableHeadProps) {
                             {
                                 index === showIcon && showName === name && index !== 0
                                     ? showName.includes('recovered')
-                                        ? <BiDownArrow />
-                                        : <BiUpArrow />
+                                        ? <BsFillCaretDownFill />
+                                        : <BsFillCaretUpFill />
                                     : ''
                             }
                         </div>
