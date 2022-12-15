@@ -82,6 +82,7 @@
             }
             @media (max-width: $break-point-mobile),(min-width: $break-point-mobile) and (max-width: $break-point-mobile-md)  {
                 padding: 10px 20px;
+                box-shadow: 0 5px #fff;
             }
         }
     }; 
