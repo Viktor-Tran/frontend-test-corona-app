@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import useModal from '../../hooks/useModal'
 import Summary from '../../services/summary'
 import { ModalProps, RestCountries } from '../../type'
 import Loading from '../loading'

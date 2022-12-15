@@ -58,3 +58,8 @@ export interface ModalProps {
     countryCode: string,
     setIsShowModal: React.Dispatch<React.SetStateAction<boolean>>
 }
+
+export interface hookSortListProps {
+    currentList: Array<Country>,
+    setCurrentList: React.Dispatch<React.SetStateAction<Array<Country>>>
+}
